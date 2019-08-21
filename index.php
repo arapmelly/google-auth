@@ -18,12 +18,14 @@ $client->addScope("https://www.googleapis.com/auth/userinfo.profile");
 
 //$objRes = new Google_Service_Oauth2($client);
 
-$gClient = $client->authorize($_GET['code']);
+$googleAuthUrl  =  $client->createAuthUrl();
 
-$response = $gClient->get('https://www.googleapis.com/plus/v1/people/me');
+//$gClient = $client->authorize($_GET['code']);
+
+//$response = $gClient->get('https://www.googleapis.com/plus/v1/people/me');
 
 echo '<pre>';
-print_r($response);
+print_r($googleAuthUrl);
 
 
 ?>
