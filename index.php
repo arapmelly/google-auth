@@ -18,7 +18,7 @@ $client->addScope("https://www.googleapis.com/auth/userinfo.profile");
 
 //$objRes = new Google_Service_Oauth2($client);
 
-$gClient = $client->authorize();
+$gClient = $client->authorize($_GET['code']);
 
 $response = $gClient->get('https://www.googleapis.com/plus/v1/people/me');
 
