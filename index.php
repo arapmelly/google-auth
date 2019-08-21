@@ -61,6 +61,8 @@
 </style>
 <?php
 include_once('google_oauth_config.php');
+
+echo $googleAuthUrl;
 ?>
 </head>
 <body class="">

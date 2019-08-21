@@ -21,26 +21,27 @@ $client->addScope("https://www.googleapis.com/auth/userinfo.profile");
 
 $objRes = new Google_Service_Oauth2($client);
 
+print_r($objRes);
 //Add access token to php session after successfully authenticate
-if (isset($_GET['code'])) {
-  $client->authenticate($_GET['code']);
-  $_SESSION['access_token'] = $client->getAccessToken();
-  header('Location: ' . filter_var($redirect_uri, FILTER_SANITIZE_URL));
-}
+// $client->authenticate($_GET['code']);
+//   if (isset($_GET['code'])) {
+//   $_SESSION['access_token'] = $client->getAccessToken();
+//   header('Location: ' . filter_var($redirect_uri, FILTER_SANITIZE_URL));
+// }
 
-//set token
-if (isset($_SESSION['access_token']) && $_SESSION['access_token']) {
-  $client->setAccessToken($_SESSION['access_token']);
-}
+// //set token
+// if (isset($_SESSION['access_token']) && $_SESSION['access_token']) {
+//   $client->setAccessToken($_SESSION['access_token']);
+// }
 
-//store with user data
-if ($client->getAccessToken()) {
-  $userData = $objRes->userinfo->get();
-  if(!empty($userData)) {
-	//insert data into database
-  }
-  $_SESSION['access_token'] = $client->getAccessToken();
-} else {
-  $googleAuthUrl  =  $client->createAuthUrl();
-}
+// //store with user data
+// if ($client->getAccessToken()) {
+//   $userData = $objRes->userinfo->get();
+//   if(!empty($userData)) {
+// 	//insert data into database
+//   }
+//   $_SESSION['access_token'] = $client->getAccessToken();
+// } else {
+//   $googleAuthUrl  =  $client->createAuthUrl();
+// }
 ?>
