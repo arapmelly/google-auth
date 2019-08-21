@@ -21,8 +21,7 @@ $client->addScope("https://www.googleapis.com/auth/userinfo.profile");
 
 $objRes = new Google_Service_Oauth2($client);
 
-echo '<pre>';
-print_r($objRes);
+
 //Add access token to php session after successfully authenticate
 // $client->authenticate($_GET['code']);
 //   if (isset($_GET['code'])) {
@@ -35,14 +34,16 @@ print_r($objRes);
 //   $client->setAccessToken($_SESSION['access_token']);
 // }
 
-// //store with user data
-// if ($client->getAccessToken()) {
-//   $userData = $objRes->userinfo->get();
-//   if(!empty($userData)) {
-// 	//insert data into database
-//   }
-//   $_SESSION['access_token'] = $client->getAccessToken();
-// } else {
-//   $googleAuthUrl  =  $client->createAuthUrl();
-// }
+//store with user data
+if ($client->getAccessToken()) {
+  $userData = $objRes->userinfo->get();
+  if(!empty($userData)) {
+  //insert data into database
+  echo '<pre>';
+  print_r($userData);
+  }
+  //$_SESSION['access_token'] = $client->getAccessToken();
+} //else {
+  //$googleAuthUrl  =  $client->createAuthUrl();
+//}
 ?>
