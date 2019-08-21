@@ -5,8 +5,10 @@ session_start();
 require_once 'vendor/autoload.php';
 
 // Set config params to acces Google API
- $client_id = '214940814253-fd11ba7nje065ncau0srk2p2keam69ea.apps.googleusercontent.com';
- $client_secret = 'AIzaSyBGK442K-SxJ-5ChVV1bdIy1fMvQe4Y9Qw';
+ //$client_id = '214940814253-fd11ba7nje065ncau0srk2p2keam69ea.apps.googleusercontent.com';
+ //$client_secret = 'AIzaSyBGK442K-SxJ-5ChVV1bdIy1fMvQe4Y9Qw';
+ $client_id = '571217543637-hp5npepph3217gioqrv6mkr2b875l4fk.apps.googleusercontent.com';
+ $client_secret = 'oD87pg78fc4juFmuLZetOFWJ';
  $redirect_uri = 'http://social-auth.pocktt.com';
  
 //Create and Request to access Google API
